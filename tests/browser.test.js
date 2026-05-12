@@ -47,6 +47,6 @@ test('clickign "pop" should tell you the popped element', async () => {
         await pop.click();
         let popAlert = await driver.switchTo().alert();
         let popText = await popAlert.getText();
-        expect(popText).toEqual('Tog bort Potatis');
+        expect(popText).toEqual('Tog bort Äpplen');
         await popAlert.accept();
 })

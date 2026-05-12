@@ -26,7 +26,7 @@ test('pop does pop in last in-first out', () => {
     stack.push("Hej");
     stack.push(7);
     expect(stack.peek()).toBeDefined();
-    expect(stack.pop()).toBe(3);
-    expect(stack.pop()).toBe("Hej");
     expect(stack.pop()).toBe(7);
+    expect(stack.pop()).toBe("Hej");
+    expect(stack.pop()).toBe(3);
 });
