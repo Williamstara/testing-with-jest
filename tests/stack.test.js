@@ -17,3 +17,16 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBeDefined();
     expect(stack.peek()).toBe(42);
 });
+
+
+//Eget test för att kolla att stacken poppar i rätt ordning, denna gång förväntas testst inte funka 
+test('pop does pop in last in-first out', () => {
+
+    stack.push(3);
+    stack.push("Hej");
+    stack.push(7);
+    expect(stack.peek()).toBeDefined();
+    expect(stack.pop()).toBe(3);
+    expect(stack.pop()).toBe("Hej");
+    expect(stack.pop()).toBe(7);
+});

@@ -34,3 +34,19 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+//Eget test för att kolla att alert på webbsidan visar rätt element som nyss poppats, denna gång förväntas testst inte funka 
+test('clickign "pop" should tell you the popped element', async () => {
+        let push = await driver.findElement(By.id('push'));
+        await push.click();
+        let alert = await driver.switchTo().alert();
+        await alert.sendKeys("Äpplen");
+        await alert.accept();
+
+        let pop = await driver.findElement(By.id('pop'));
+        await pop.click();
+        let popAlert = await driver.switchTo().alert();
+        let popText = await popAlert.getText();
+        expect(popText).toEqual('Tog bort Potatis');
+        await popAlert.accept();
+})
